@@ -4,6 +4,7 @@
 
 # Mac OS X
 .DS_Store
+.github
 ._.*
 ._*
 

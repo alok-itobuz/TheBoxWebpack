@@ -1,306 +1,490 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <meta charset="UTF-8">
-    <title>Webpack Boilerplate Starter Template</title>
-    <meta name="description" content="Simple starter webpack 5 project template boilerplate supporting SASS/PostCSS, Babel ES7, browser syncing, code linting. Easy project setup having multiple features and developer friendly tools.">
-    <meta name="keywords" content="webpack, webpack-configuration, template, boilerplate, setup, html, css, sass, javascript">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="author" content="Plamen Nikolov, WeAreAthlon">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65"
+      crossorigin="anonymous"
+    />
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4"
+      crossorigin="anonymous"
+    ></script>
+
+    <link rel="stylesheet" href="style.css" />
+    <title>The Box BS</title>
   </head>
+
   <body>
-    <header>
-      <h1>Webpack 5 Template Boilerplate</h1>
-      <small>Maintained by <a href="https://www.weareathlon.com/" target="_blank" rel="noopener">WeAreAthlon</a>. Source code availalbe on <a href="https://github.com/WeAreAthlon/frontend-webpack-boilerplate/" target="_blank"><img src="images/content/github.png" alt="GitHub logo"> GitHub</a>.</small>
-      <div class="badges">
-        <a href="https://github.com/WeAreAthlon/frontend-webpack-boilerplate/" target="_blank" rel="noopener"><img src="https://img.shields.io/maintenance/yes/2024?logo=github" alt="Maintenance"></a>
-        <a href="https://github.com/WeAreAthlon/frontend-webpack-boilerplate/actions" target="_blank" rel="noopener"><img src="https://github.com/WeAreAthlon/frontend-webpack-boilerplate/actions/workflows/deploy.yml/badge.svg" alt="Build Status"></a>
-        <a href="https://webpack.js.org" target="_blank" rel="noopener"><img src="https://img.shields.io/badge/webpack-v5.89.0-green?logo=webpack" alt="Current Webpack Version"></a>
-        <a href="https://snyk.io/advisor/npm-package/@weareathlon/frontend-webpack-boilerplate" target="_blank" rel="noopener"><img src="https://snyk.io/advisor/npm-package/@weareathlon/frontend-webpack-boilerplate/badge.svg" alt="Snyk.io package health badge"></a>
-        <br>
-        <a href="https://github.com/WeAreAthlon/frontend-webpack-boilerplate/issues" target="_blank" rel="noopener"><img src="https://img.shields.io/github/issues-raw/WeAreAthlon/frontend-webpack-boilerplate" alt="GitHub Issues"></a>
-        <a href="https://snyk.io/test/github/WeAreAthlon/frontend-webpack-boilerplate?targetFile=package.json" target="_blank" rel="noopener"><img src="https://snyk.io/test/github/WeAreAthlon/frontend-webpack-boilerplate/badge.svg?targetFile=package.json" alt="Known Vulnerabilities"></a>
-        <a href="https://www.npmjs.com/package/@weareathlon/frontend-webpack-boilerplate" target="_blank" rel="noopener"><img src="https://img.shields.io/npm/dm/@weareathlon/frontend-webpack-boilerplate" alt="npm"></a>
-        <a href="https://github.com/WeAreAthlon/frontend-webpack-boilerplate/blob/master/LICENSE" target="_blank" rel="noopener"><img src="https://img.shields.io/github/license/WeAreAthlon/frontend-webpack-boilerplate" alt="GitHub License"></a>
+    <nav class="navbar navbar-expand-lg">
+      <div class="container">
+        <a class="navbar-brand fw-bold d-flex flex-row align-items-center gap-3" href="#">
+          <img src="./images/content/navbar/logo.svg" alt="logo" width="35" />
+          <span class="logo-text"><i>The</i>Box</span>
+        </a>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarSupportedContent"
+          aria-controls="navbarSupportedContent"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+            <li class="nav-item">
+              <a class="nav-link active" aria-current="page" href="#hero">Home</a>
+            </li>
+            <li class="nav-item ms-lg-2">
+              <a class="nav-link" href="#about">About Us</a>
+            </li>
+            <li class="nav-item ms-lg-2">
+              <a class="nav-link" href="#projects">Projects</a>
+            </li>
+            <li class="nav-item ms-lg-2">
+              <a class="nav-link" href="#service">Services</a>
+            </li>
+            <li class="nav-item ms-lg-2">
+              <a class="nav-link" href="#contact">Contact Us</a>
+            </li>
+          </ul>
+        </div>
       </div>
-      <a href="https://github.com/WeAreAthlon/frontend-webpack-boilerplate" class="github-corner" title="View source on GitHub" aria-label="View source on GitHub">
-        <svg width="80" height="80" viewBox="0 0 250 250" style="fill:#151513; color:#fff; position: absolute; top: 0; border: 0; right: -1px; border-top-right-radius: 5px;" aria-hidden="true">
-          <path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path>
-          <path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2" fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"></path>
-          <path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z" fill="currentColor" class="octo-body"></path>
-        </svg>
-      </a>
-    </header>
-    <main>
-      <img src="images/content/header.png" alt="Webpack 5 Template Boilerplate">
-      <h1>Demo page illustrating building of SASS, PostCSS, JavaScript, Fonts, Background Images and Inline Images.</h1>
-      <img src="images/content/logoa.svg" alt="Logo of Athlon" class="logo"> 
-      <h2 id="table-of-contents">Table of Contents</h2>
-      <ul>
-        <li><a href="#features">Features</a></li>
-        <li><a href="#requirements">Requirements</a></li>
-        <li>
-          <a href="#setup">Setup</a>
-          <ul>
-            <li><a href="#installation">Installation</a></li>
-            <li><a href="#define-package-metadata">Define Package Metadata</a></li>
-          </ul>
-        </li>
-        <li>
-          <a href="#configuration">Configuration</a>
-          <ul>
-            <li><a href="#environment-configuration">Environment Configuration</a></li>
-            <li><a href="#additional-webpack-configuration">Additional webpack configuration</a></li>
-          </ul>
-        </li>
-        <li>
-          <a href="#development">Development</a>
-          <ul>
-            <li><a href="#assets-source">Assets Source</a></li>
-            <li>
-              <a href="#build-assets">Build Assets</a>
-              <ul>
-                <li><a href="#one-time-build-assets-for-development">One time build assets for development</a></li>
-                <li><a href="#build-assets-and-enable-source-files-watcher">Build assets and enable source files watcher</a></li>
-                <li><a href="#start-a-development-server---reloading-automatically-after-each-file-change">Start a development server - reloading automatically after each file change.</a></li>
-              </ul>
-            </li>
-          </ul>
-        </li>
-        <li>
-          <a href="#production">Production</a>
-          <ul>
-            <li><a href="#build-assets-1">Build Assets</a></li>
-            <li><a href="#get-built-assets">Get Built Assets</a></li>
-          </ul>
-        </li>
-        <li>
-          <a href="#run-code-style-linters">Run Code Style Linters</a>
-          <ul>
-            <li><a href="#sass">SASS</a></li>
-            <li><a href="#javascript">JavaScript</a></li>
-          </ul>
-        </li>
-        <li>
-          <a href="#additional-tools">Additional Tools</a>
-          <ul>
-            <li><a href="#run-assets-bundle-analyzer">Run Assets Bundle Analyzer</a></li>
-            <li><a href="#continuous-integration">Continuous Integration</a></li>
-          </ul>
-        </li>
-      </ul>
-      <h2 id="features">Features</h2>
-      <ul>
-        <li><strong>0</strong> dependencies</li>
-        <li>
-          <strong>Simple setup</strong> instructions
-          <ul>
-            <li>Start development of a project right away with <strong>simple</strong>, <strong>configured</strong>, <strong>linter enabled</strong>, <strong>browser synced</strong> asset files.</li>
-          </ul>
-        </li>
-        <li>
-          Configuration per <strong>environment</strong>
-          <ul>
-            <li><code>development</code> - <a href="https://webpack.js.org/configuration/devtool/"><code>sourcemaps</code></a>, <a href="https://webpack.js.org/configuration/dev-server/"><code>browser synced developmentment server</code></a></li>
-            <li><code>production</code> - <a href="https://webpack.js.org/plugins/terser-webpack-plugin/"><code>minification</code></a>, <a href="https://webpack.js.org/configuration/devtool/"><code>sourcemaps</code></a></li>
-          </ul>
-        </li>
-        <li>Configurable <strong>browsers versions support</strong>. It uses <a href="https://github.com/browserslist/browserslist#full-list"><code>browserslist</code></a> - just specify the browsers you want to support in the <code>package.json</code> file for <code>browserslist</code>:</li>
-      </ul>
-      <pre><code class="lang-js"><span class="hljs-string">"browserslist"</span>: [
-          <span class="hljs-string">"last 2 versions"</span>,
-          <span class="hljs-string">"&gt; 5%"</span>
-      ]
-      </code></pre>
-      <ul>
-        <li>
-          The built CSS / JavaScript files will respect the <strong>configured supported browser versions</strong> using the following tools:
-          <ul>
-            <li><a href="https://github.com/postcss/autoprefixer"><code>autoprefixer</code></a> - automatically adds vendor prefixes to CSS rules</li>
-            <li><a href="https://babeljs.io/docs/en/babel-preset-env"><code>babel-preset-env</code></a> - smart preset that allows you to use the latest JavaScript without needing to micromanage which syntax transforms (<em>and optionally, browser polyfills</em>) are needed by your target environment(s).</li>
-          </ul>
-        </li>
-        <li>
-          Demo project files to be used as a reference and <strong>example demo</strong> building of:
-          <ul>
-            <li><em>JavaScript</em></li>
-            <li><em>SASS / PostCSS</em></li>
-            <li><em>HTML</em> templates</li>
-            <li><em>Images</em> (<em>CSS backgrounds and image tags</em>)</li>
-            <li><em>Videos</em></li>
-            <li><em>Fonts</em></li>
-          </ul>
-        </li>
-        <li>
-          Support for <strong>assets optimization</strong> for production environment with ability to configure:
-          <ul>
-            <li><strong>Code Minification</strong> of <em>JavaScript</em> and <em>CSS</em> processed files.</li>
-            <li><strong>Optimize Assets Loading</strong> - inline and embed <strong>images</strong> / <strong>fonts</strong> files having file size below a <em>configurable</em> threshold value.</li>
-            <li><strong>Images Optimisation</strong> - optimize <code>jpeg</code>, <code>jpg</code>, <code>png</code>, <code>gif</code>, <code>svg</code> filesize and loading type via <a href="https://github.com/imagemin/imagemin"><code>imagemin</code></a>. Plugin and Loader for webpack to optimize (<em>compress</em>) all images using <code>imagemin</code>. Do not worry about size of images, now they are always optimized/compressed.</li>
-          </ul>
-        </li>
-        <li>
-          Support for <strong>source code syntax style and formatting linters</strong> that analyze source code to flag any programming errors, bugs, stylistic errors or suspicious constructs:
-          <ul>
-            <li><strong>SASS/PostCSS syntax cheker</strong> - you can change or add additional rules in <code>.sasslintrc</code> file. Configuration options can be found on <a href="https://github.com/sasstools/sass-lint/blob/master/lib/config/sass-lint.yml"><code>sass-lint</code></a> documentation.</li>
-            <li><strong>JavaScript syntax checker</strong> - following the <code>airbnb</code> style, you can review and configure the rules in <code>.eslintrc</code> file. Configuration options can be found on <a href="https://eslint.org/docs/user-guide/configuring"><code>eslint</code></a> documentation.</li>
-          </ul>
-        </li>
-        <li>Latest <a href="https://github.com/webpack/webpack">Webpack 5</a> - <em>JavaScript</em> module bundler.</li>
-        <li>Latest <a href="https://github.com/sass/sass">SASS/PostCSS</a> compiler based on Dart <code>sass</code>.</li>
-        <li>Latest <a href="https://github.com/babel/babel">Babel 7</a> (<code>@babel/core</code>) - JavaScript compiler - <em>Use next generation JavaScript, today.</em></li>
-        <li>
-          Integration with <a href="https://github.com/features/actions">GitHub Actions</a>
-          <ul>
-            <li><a href="https://weareathlon.github.io/frontend-webpack-boilerplate/">Demo deployment available to GitHub pages</a></li>
-          </ul>
-        </li>
-        <li>Configured and ready to use <strong>Webpack Dev Server</strong> plugin for faster local development - <a href="https://webpack.js.org/configuration/dev-server/"><code>webpack-dev-server</code></a></li>
-        <li>Integration with <a href="https://www.npmjs.com/package/webpack-bundle-analyzer">Webpack Bundle Analyzer</a> - <em>Visualize size of webpack output files with an interactive zoomable treemap.</em></li>
-      </ul>
-      <h2 id="requirements">Requirements</h2>
-      <ul>
-        <li><code>node</code> : <code>&gt;=14</code></li>
-        <li><code>npm</code></li>
-      </ul>
-      <h1 id="setup">Setup</h1>
-      <h2 id="installation">Installation</h2>
-      <ol>
-        <li>Choose and download the latest template release from <a href="https://github.com/WeAreAthlon/frontend-webpack-boilerplate/releases">List of Releases</a>.</li>
-        <li>Extract the release archive to a new directory, rename it to your project name and browse the directory.</li>
-        <li>Install all dependencies using <code>npm</code> <em>clean install</em> command. </li>
-      </ol>
-      <pre><code class="lang-sh">$ <span class="hljs-built_in">npm</span> ci</code></pre>
-      <blockquote>
-        <p>More on the clean install npm command can be read here <a href="https://docs.npmjs.com/cli/ci.html"><code>npm ci</code></a></p>
-        <p>You can still use <code>npm install</code> in cases the <code>npm ci</code> raises system error due to specific platform incompatibilities.</p>
-      </blockquote>
-      <h2 id="define-package-metadata">Define Package Metadata</h2>
-      <ul>
-        <li>
-          Amend <code>package.json</code> file and optionally specify:
-          <ul>
-            <li><code>name</code> - Name of your project. A name can be optionally prefixed by a scope, e.g. <code>@myorg/mypackage</code>.</li>
-            <li><code>version</code> - Specify and maintain a version number indicator for your project code.</li>
-            <li><code>author</code> - Your organisation or just yourself. You can also specify <a href="https://docs.npmjs.com/files/package.json#people-fields-author-contributors"><code>contributors</code></a>.</li>
-            <li><code>description</code> - Short description of your project.</li>
-            <li><code>keywords</code> - Put keywords in it. It’s an array of strings.</li>
-            <li><code>repository</code> - Specify the place where your code lives.</li>
-            <li><code>license</code> - Announce your code license, figure out the license from <a href="https://choosealicense.com">Choose an Open Source License</a> .</li>
-            <li><code>browserslist</code> - Specify the supported browsers versions - you can refer to <a href="https://github.com/browserslist/browserslist#full-list">full list</a> of availalbe options.</li>
-          </ul>
-        </li>
-      </ul>
-      <h1 id="configuration">Configuration</h1>
-      <h2 id="environment-configuration">Environment Configuration</h2>
-      <ul>
-        <li>
-          Edit the <a href="configuration/environment.js"><code>configuration/environment.js</code></a> if you want to specify:
-          <ul>
-            <li><strong><code>server</code></strong>: configure development server, specify <code>host</code>, <code>port</code>. Refer to the full development server configuration options for <a href="https://webpack.js.org/configuration/dev-server/"><code>webpack-dev-server</code></a>.</li>
-            <li>
-              <strong><code>limits</code></strong>: configure file size thresholds for assets optimizations.
-              <ul>
-                <li>Image/Font files size in bytes. Below this value the image file will be served as Data URL (<em>inline base64</em>).</li>
-              </ul>
-            </li>
-            <li><strong><code>paths</code></strong>: <code>src</code> or <code>dist</code> directories names and file system location.</li>
-          </ul>
-        </li>
-      </ul>
-      <h2 id="additional-webpack-configuration">Additional <code>webpack</code> configuration</h2>
-      <p>You can additionally configure <code>webpack</code> for specific environment:</p>
-      <ul>
-        <li><code>development</code> - <a href="configuration/webpack.dev.config.js"><code>configuration/webpack.dev.config.js</code></a></li>
-        <li>
-          <code>production</code> - <a href="configuration/webpack.prod.config.js"><code>configuration/webpack.prod.config.js</code></a>
-          <ul>
-            <li>
-              Note that if you prefer to build and deploy <a href="https://webpack.js.org/configuration/devtool/#production"><code>sourcemap</code></a> files:
-              <blockquote>
-                <p>You should configure your server to disallow access to the Source Map file for normal users!</p>
-              </blockquote>
-            </li>
-          </ul>
-        </li>
-      </ul>
-      <h1 id="development">Development</h1>
-      <h2 id="assets-source">Assets Source</h2>
-      <ul>
-        <li><strong>SASS/PostCSS</strong> files are located under <code>src/scss/</code></li>
-        <li><strong>JavaScript</strong> files with support of latest ECMAScript <em>ES6 / ECMAScript 2016(ES7)/ etc</em> files are located under <code>src/js/</code></li>
-        <li><strong>Image</strong> files are located under <code>src/images/</code></li>
-        <li><strong>Font</strong> files are located under <code>src/fonts/</code></li>
-        <li>
-          <strong>HTML</strong> files are located under <code>src/</code>
-          <ul>
-            <li>It will <strong>automatically</strong> build <strong>all HTML files</strong> placed under <code>src/</code> directory, no need to manually configure each template anymore!</li>
-          </ul>
-        </li>
-      </ul>
-      <h2 id="build-assets">Build Assets</h2>
-      <h3 id="one-time-build-assets-for-development">One time build assets for development</h3>
-      <pre><code class="lang-sh">$ npm <span class="hljs-keyword">run</span><span class="bash"> build</span>
-      </code></pre>
-      <h3 id="build-assets-and-enable-source-files-watcher">Build assets and enable source files watcher</h3>
-      <pre><code class="lang-sh">$ npm <span class="hljs-keyword">run</span><span class="bash"> watch</span>
-      </code></pre>
-      <p>This command is suitable if you develop with external web server.</p>
-      <blockquote>
-        <p><strong>Note:</strong> File watching does not work with <em>NFS</em> (<em>Windows</em>) and virtual machines under <em>VirtualBox</em>. Extend the configuration in such cases by:</p>
-      </blockquote>
-      <pre><code class="lang-js">module.exports = {
-        <span class="hljs-comment">//...</span>
-      <span class="hljs-symbol">  watchOptions:</span> {
-      <span class="hljs-symbol">    poll:</span> <span class="hljs-number">1000</span> <span class="hljs-comment">// Check for changes every second</span>
-        }
-      };
-      </code></pre>
-      <h3 id="start-a-development-server-reloading-automatically-after-each-file-change-">Start a development server - reloading automatically after each file change.</h3>
-      <pre><code class="lang-sh">$ npm <span class="hljs-keyword">run</span><span class="bash"> dev</span>
-      </code></pre>
-      <h1 id="production">Production</h1>
-      <h2 id="build-assets-1">Assets Building</h2>
-      <p>Optimize assets for production by:</p>
-      <pre><code class="lang-sh">$ npm <span class="hljs-keyword">run</span><span class="bash"> production</span>
-      </code></pre>
-      <h2 id="get-built-assets">Get Built Assets</h2>
-      <ul>
-        <li><em>CSS</em> files are located under <code>/dist/css/</code></li>
-        <li><em>JavaScript</em> files with support of <em>ES6 / ECMAScript 2016(ES7)</em> files are located under <code>/dist/js/</code></li>
-        <li>
-          <em>Images</em> are located under <code>/dist/images/</code>
-          <ul>
-            <li>Images part of the <em>design</em> (<em>usually referenced in the CSS</em>) are located under <code>/dist/images/design/</code></li>
-            <li>Images part of the <em>content</em> (<em>usually referenced via <code>&lt;img&gt;</code> tags</em>) are located under <code>/dist/images/content/</code></li>
-          </ul>
-        </li>
-        <li><em>Fonts</em> are located under <code>/dist/fonts/</code></li>
-        <li><em>HTML</em> files are located under <code>/dist/</code></li>
-      </ul>
-      <h1 id="run-code-style-linters">Run Code Style Linters</h1>
-      <h2 id="sass">SASS</h2>
-      <pre><code class="lang-sh">$ npm <span class="hljs-keyword">run</span><span class="bash"> lint:sass</span></code></pre>
-      <h2 id="javascript">JavaScript</h2>
-      <pre><code class="lang-sh">$ npm <span class="hljs-keyword">run</span><span class="bash"> lint:js</span></code></pre>
-      <h1 id="additional-tools">Additional Tools</h1>
-      <h2 id="run-assets-bundle-analyzer">Run Assets Bundle Analyzer</h2>
-      <pre><code class="lang-sh">$ npm <span class="hljs-keyword">run</span><span class="bash"> stats</span></code></pre>
-      <blockquote>
-        <p>This will open the visualisaion on the default configuraiton URL <code>localhost:8888</code>, you can change this URL or port following the <a href="https://github.com/webpack-contrib/webpack-bundle-analyzer#options-for-cli">package</a> documentation.</p>
-      </blockquote>
-      <h2 id="continuous-integration">Continuous Integration</h2>
-      <p>This boilerplate template contains integration with <a href="https://github.com/features/actions/">GitHub Actions</a>. The build system runs all linting scripts and deploys production optimized pages to <em>GitHub</em> pages upon push to the <code>master</code> branch. However, note that this deployment flow only works for <em>Project Pages</em>, as User and Organization pages <a href="https://help.github.com/articles/user-organization-and-project-pages/">only support the master branch flow</a>.</p>
-      <p>For more information on how to set up alternative deployment processes, check out the <a href="https://docs.github.com/en/actions/deployment/about-deployments/deploying-with-github-actions">GitHub Actions documentation on deployment</a>. The service can deploy to dozens of cloud providers, including Heroku, AWS, and Firebase.</p>
-      <h2 id="video-files">Video File Preview</h2>
-      <video width="1024" height="576" controls>
-        <source src="videos/video.webm" type="video/webm">
-        Your browser does not support the video tag.
-      </video>
-    </main>
-    <footer>
-      <address>Documentation avaialable on the official <a href="https://github.com/WeAreAthlon/frontend-webpack-boilerplate/" target="_blank" rel="noopener">GitHub Repository</a>.</address>
-      <address>Maintained by <a href="https://www.weareathlon.com/" target="_blank" rel="noopener">WeAreAthlon</a>.</address>
+    </nav>
+
+    <section class="container-fluid position-relative d-flex flex-column justify-content-center gap-2" id="hero">
+      <h1 class="hero-heading h1 col-12 d-flex align-items-center justify-content-center justify-content-md-start">
+        Building things <br />
+        is our mission.
+      </h1>
+      <div class="hero-card w-100 mx-auto d-flex flex-column justify-content-center position-absolute">
+        <h5 class="text-white text-center fw-bold">Feature Projects</h5>
+        <p class="text-white text-center">
+          The National University of <br />
+          Architecture
+        </p>
+        <div class="btn-group w-100 bottom-0 d-flex" role="group" aria-label="Basic outlined example">
+          <button
+            type="button"
+            class="btn btn-outline-primary d-flex align-items-center justify-content-center gap-2 text-white h-100 border-0"
+          >
+            <img src="./images/content/icons/arrow-left-solid.svg" alt="" class="h-100" />
+            Back
+          </button>
+          <button
+            type="button"
+            class="btn btn-outline-primary d-flex align-items-center justify-content-center gap-2 text-white h-100 border-0"
+          >
+            Next
+            <img src="./images/content/icons/arrow-right-solid.svg" alt="" class="h-100" />
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <section id="reason" class="container-fluid py-5 d-flex flex-column justify-content-between gap-4">
+      <h2 class="text-center fw-bold mb-3">Our Reputation</h2>
+      <div
+        class="reason-card-container mx-auto d-flex flex-column flex-md-row w-100 justify-content-between align-items-center gap-3 gap-md-4"
+      >
+        <div
+          class="reason-card p-3 border border-black w-100 d-flex flex-column align-items-start gap-1 gap-sm-3 justify-content-md-center"
+        >
+          <img src="./images/content/reasons/headphone.svg" alt="headphone" />
+          <h2 class="mb-0 fw-semibold">Best Services</h2>
+          <p class="flex-grow-1 mb-0 w-100">
+            Nullam senectus porttitor in <br />
+            eget. Eget rutrum leo interdum.
+          </p>
+        </div>
+        <div class="reason-card p-3 border border-black w-100 d-flex flex-column align-items-start gap-1 gap-sm-3">
+          <img src="./images/content/reasons/headphone.svg" alt="headphone" />
+          <h2 class="mb-0 fw-semibold">Best Teams</h2>
+          <p class="flex-grow-1 mb-0 w-100">
+            Cursus semper tellus volutpat <br />
+            aliquet lacus.
+          </p>
+        </div>
+        <div class="reason-card p-3 border border-black w-100 d-flex flex-column align-items-start gap-1 gap-sm-3">
+          <img src="./images/content/reasons/best_design.svg" alt="best design" />
+          <h2 class="mb-0 fw-semibold">Best Designs</h2>
+          <p class="flex-grow-1 mb-0 w-100">
+            Ultricies at ipsum nunc, <br />
+            tristique nam lectus.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section id="about" class="container-fluid mx-auto py-5">
+      <div class="about-container border-radius-3px position-relative h-100 w-100">
+        <div class="about-text-container position-absolute h-100 w-100 text-white d-flex flex-column">
+          <h3 class="mb-0 fw-bold">About us</h3>
+          <p class="mb-0 fw-light">
+            For more than 30 years we have been delivering world-class construction and we’ve built many lasting
+            relationships along the way.
+            <br />
+            <br />
+            We’ve matured into an industry leader and trusted resource for those seeking quality, innovation and
+            reliability when building in the U.S.
+          </p>
+          <button class="bg-white border-0 py-md-2 px-md-4 border-radius-3px">More on Our History</button>
+        </div>
+      </div>
+    </section>
+
+    <section id="service" class="py-5">
+      <h2 class="text-center fw-bold">Services</h2>
+      <div class="service-container container-sm">
+        <div class="service-card-container row">
+          <div class="service-card-outer col-12 col-md-6 col-lg-4 p-4">
+            <div
+              class="service-card-inner border-radius-3px w-100 h-100 d-flex flex-column align-items-center justify-content-center"
+            >
+              <img src="./images/content/service/construction.svg" alt="construction" class="h-25" />
+              <span></span>
+              <h4 class="m-0 fw-bold">Construction</h4>
+            </div>
+          </div>
+          <div class="service-card-outer col-12 col-md-6 col-lg-4 p-4">
+            <div
+              class="service-card-inner border-radius-3px w-100 h-100 d-flex flex-column align-items-center justify-content-center"
+            >
+              <img src="./images/content/service/renovation.svg" alt="renovation" class="h-25" />
+              <span></span>
+              <h4 class="m-0 fw-bold">Renovation</h4>
+            </div>
+          </div>
+          <div class="service-card-outer col-12 col-md-6 col-lg-4 p-4">
+            <div
+              class="service-card-inner border-radius-3px w-100 h-100 d-flex flex-column align-items-center justify-content-center"
+            >
+              <img src="./images/content/service/consultation.svg" alt="construction" class="h-25" />
+              <span></span>
+              <h4 class="m-0 fw-bold">Consultation</h4>
+            </div>
+          </div>
+          <div class="service-card-outer col-12 col-md-6 col-lg-4 p-4">
+            <div
+              class="service-card-inner border-radius-3px w-100 h-100 d-flex flex-column align-items-center justify-content-center"
+            >
+              <img src="./images/content/service/repair_services.svg" alt="repait services" class="h-25" />
+              <span></span>
+              <h4 class="m-0 fw-bold">Repair Services</h4>
+            </div>
+          </div>
+          <div class="service-card-outer col-12 col-md-6 col-lg-4 p-4">
+            <div
+              class="service-card-inner border-radius-3px w-100 h-100 d-flex flex-column align-items-center justify-content-center"
+            >
+              <img src="./images/content/service/architecture.svg" alt="architecture" class="h-25" />
+              <span></span>
+              <h4 class="m-0 fw-bold">Architecture</h4>
+            </div>
+          </div>
+          <div class="service-card-outer col-12 col-md-6 col-lg-4 p-4">
+            <div
+              class="service-card-inner border-radius-3px w-100 h-100 d-flex flex-column align-items-center justify-content-center"
+            >
+              <img src="./images/content/service/electric.svg" alt="electric" class="h-25" />
+              <span></span>
+              <h4 class="m-0 fw-bold">Electric</h4>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section id="stats" class="container-sm p-2">
+      <div class="row m-0 h-100 w-100">
+        <div class="stats-diagram mx-auto h-100 col-12 col-lg-8 d-flex flex-column position-relative">
+          <div class="row m-0 stats-diagram-row position-relative">
+            <div class="stats-card-84 col-12 col-md-6 col-lg-5 stats-card-outer p-3 p-md-5 p-lg-2 z-1">
+              <div
+                class="w-100 h-100 stats-card-inner border-radius-3px position-relative d-flex flex-column justify-content-center"
+              >
+                <img src="./images/content/stats/handshake.svg" alt="handshake" class="position-absolute" />
+                <h2 class="m-0 p-0">84</h2>
+                <p class="m-0">Happy Clients</p>
+              </div>
+            </div>
+            <div class="stats-card-123 col-12 col-md-6 col-lg-5 stats-card-outer p-3 p-md-5 p-lg-2">
+              <div
+                class="w-100 h-100 stats-card-inner border-radius-3px position-relative d-flex flex-column justify-content-center"
+              >
+                <img src="./images/content/stats/note.svg" alt="note" class="position-absolute" />
+                <h2 class="m-0 p-0">123</h2>
+                <p class="m-0">Projects Completed</p>
+              </div>
+            </div>
+          </div>
+          <div class="row m-0 stats-diagram-row position-relative">
+            <div class="stats-card-37 col-12 col-md-6 col-lg-5 stats-card-outer p-3 p-md-5 p-lg-2">
+              <div
+                class="w-100 h-100 stats-card-inner border-radius-3px position-relative d-flex flex-column justify-content-center z-2"
+              >
+                <img src="./images/content/stats/award.svg" alt="award" class="position-absolute" />
+                <h2 class="m-0 p-0">37</h2>
+                <p class="m-0">Awards Win</p>
+              </div>
+            </div>
+            <div class="stats-card-30 col-12 col-md-6 stats-card-outer col-lg-5 p-3 p-md-5 p-lg-2">
+              <div
+                class="w-100 h-100 stats-card-inner border-radius-3px position-relative d-flex flex-column justify-content-center"
+              >
+                <img src="./images/content/stats/note_extended.svg" alt="note extended" class="position-absolute" />
+                <h2 class="m-0 p-0">30</h2>
+                <p class="m-0">Years in Business</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="stats-text col-12 col-lg-4 p-4 d-flex flex-column justify-content-center gap-4 mx-auto">
+          <h2 class="fw-bold h1 m-0">30 Years <br />Experience</h2>
+          <p class="m-0">
+            Our company has been the leading provided construction services to clients throughout the USA since 1988.
+          </p>
+          <a class="m-0 py-2 px-5 px-lg-4 border-radius-3px" href="#contact">Contact Us</a>
+        </div>
+      </div>
+    </section>
+    <section id="ads" class="py-1">
+      <div class="ads-container container h-100 w-100 p-0">
+        <div class="row m-0 h-100 w-100 text-white">
+          <div
+            class="ads-content col-12 col-lg-9 d-flex flex-column align-items-centeralign-items-md-start d-flex aligni d-flex flex-column justify-content-evenly justify-content-md-center gap-2"
+          >
+            <h2 class="text-center text-lg-start mt-auto mt-lg-0">Free consultation with exceptional quality</h2>
+            <p class="text-center text-lg-start mt-auto mt-lg-0">Just one call away: +84 1102 2703</p>
+          </div>
+          <div class="ads-button-container col-9 col-lg-3 mx-auto d-flex align-items-center">
+            <button class="text-white w-100 py-2 py-lg-3 h6 m-0">Get your consultation</button>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section id="projects" class="container-lg py-5">
+      <h2 class="project-heading fw-bold px-4 mx-auto">Projects</h2>
+      <div class="project-container row mx-auto">
+        <div class="projects-link-container col-12 col-md-3 p-4 d-flex flex-row flex-md-column">
+          <a href="#" class="ps-0 ps-md-2 pb-1 pb-md-0 text-decoration-none fw-semibold">All</a>
+          <a href="#" class="ps-0 ps-md-2 pb-1 pb-md-0 text-decoration-none fw-semibold ms-3 ms-md-0 mt-0 mt-md-1"
+            >Commercial</a
+          >
+          <a href="#" class="ps-0 ps-md-2 pb-1 pb-md-0 text-decoration-none fw-semibold ms-3 ms-md-0 mt-0 mt-md-1"
+            >Residential</a
+          >
+          <a href="#" class="ps-0 ps-md-2 pb-1 pb-md-0 text-decoration-none fw-semibold ms-3 ms-md-0 mt-0 mt-md-1"
+            >Other</a
+          >
+        </div>
+        <div class="projects-cards-container col-12 col-md-9 p-4 row m-0">
+          <div class="project-card-outer col-12 col-md-6 p-3">
+            <div class="project-card-inner h-100 w-100 d-flex flex-column gap-0">
+              <div class="image-container overflow-hidden flex-grow-1 p-0">
+                <img
+                  src="./images/content/project/wildstone_infra_hotel.svg"
+                  alt="wildstone_infra_hotel"
+                  class="object-fit-cover w-100"
+                />
+              </div>
+              <div class="description text-white d-flex flex-column justify-content-center ps-2">
+                <h6 class="m-0">Wildstone Infra Hotel</h6>
+                <p class="m-0">2715 Ash Dr. San Jose, South Dakota</p>
+              </div>
+            </div>
+          </div>
+          <div class="project-card-outer col-12 col-md-6 p-3">
+            <div class="project-card-inner h-100 w-100 d-flex flex-column gap-0">
+              <div class="image-container overflow-hidden flex-grow-1 p-0">
+                <img
+                  src="./images/content/project/wish_stone_buiilding.png"
+                  alt="Wish Stone Building"
+                  class="object-fit-cover w-100"
+                />
+              </div>
+              <div class="description text-white d-flex flex-column justify-content-center ps-2">
+                <h6 class="m-0">Wish Stone Building</h6>
+                <p class="m-0">2972 Westheimer Rd. Santa Ana, Illinois</p>
+              </div>
+            </div>
+          </div>
+          <div class="project-card-outer col-12 col-md-6 p-3">
+            <div class="project-card-inner h-100 w-100 d-flex flex-column gap-0">
+              <div class="image-container overflow-hidden flex-grow-1 p-0">
+                <img
+                  src="./images/content/project/parkinston_house.svg"
+                  alt="Mr. Parkinston's House"
+                  class="object-fit-cover w-100"
+                />
+              </div>
+              <div class="description text-white d-flex flex-column justify-content-center ps-2">
+                <h6 class="m-0">Mr. Parkinston’s House</h6>
+                <p class="m-0">3517 W. Gray St. Utica, Pennsylvania</p>
+              </div>
+            </div>
+          </div>
+          <div class="project-card-outer col-12 col-md-6 p-3">
+            <div class="project-card-inner h-100 w-100 d-flex flex-column gap-0">
+              <div class="image-container overflow-hidden flex-grow-1 p-0">
+                <img
+                  src="./images/content/project/oregano_height.svg"
+                  alt="Oregano Height"
+                  class="object-fit-cover w-100"
+                />
+              </div>
+              <div class="description text-white d-flex flex-column justify-content-center ps-2">
+                <h6 class="m-0">Oregano Height</h6>
+                <p class="m-0">2464 Royal Ln. Mesa, New Jersey</p>
+              </div>
+            </div>
+          </div>
+          <div class="w-100 project-naviagation-outer px-3">
+            <div class="project-navigation-inner w-100 h-100 row m-0">
+              <button class="h-100 col-4 py-2 px-3 text-white d-flex justify-content-center align-items-center gap-1">
+                <img src="./images/content/icons/arrow-left-solid.svg" alt="left arrow" class="h-75" />
+                Back
+              </button>
+              <div
+                class="project-navigation-dot-container h-100 col-4 d-flex align-items-center justify-content-evenly p-0"
+              >
+                <a href="http://" target="_blank" rel="noopener noreferrer" class="h-25 rounded"></a
+                ><a href="http://" target="_blank" rel="noopener noreferrer" class="h-25 rounded"></a
+                ><a href="http://" target="_blank" rel="noopener noreferrer" class="h-25 rounded"></a
+                ><a href="http://" target="_blank" rel="noopener noreferrer" class="h-25 rounded"></a>
+              </div>
+              <button
+                class="h-100 col-4 py-2 px-3 text-white d-flex justify-content-center align-items-center gap-sm-1"
+              >
+                Next
+                <img src="./images/content/icons/arrow-right-solid.svg" alt="right arrow" class="h-75" />
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="contact" class="py-5">
+      <div class="contact-container container-sm d-flex flex-column align-items-center justify-content-evenly">
+        <h2 class="fs-2 fw-bold">What can us do for you?</h2>
+        <p class="text-center fs-6 fw-normal">
+          We are ready to work on a project of any complexity,<br />
+          whether it’s commercial or residential.
+        </p>
+        <form action="#" class="container-sm p-2 p-md-2">
+          <div class="row m-0">
+            <div class="col-12 col-md-6 p-2">
+              <div class="form-floating">
+                <input type="text" class="form-control shadow-none" id="username" placeholder="name@example.com" />
+                <label for="username">Your Name</label>
+              </div>
+            </div>
+            <div class="col-12 col-md-6 p-2">
+              <div class="form-floating">
+                <input type="email" class="form-control shadow-none" id="email" placeholder="name@example.com" />
+                <label for="email">Email</label>
+              </div>
+            </div>
+          </div>
+          <div class="row m-0">
+            <div class="col-12 col-md-6 p-2">
+              <div class="form-floating">
+                <input type="text" class="form-control shadow-none" id="reason" placeholder="name@example.com" />
+                <label for="reason">Reason for Contacting</label>
+              </div>
+            </div>
+            <div class="col-12 col-md-6 p-2">
+              <div class="form-floating">
+                <input type="number" class="form-control shadow-none" id="phone" placeholder="name@example.com" />
+                <label for="phone">Phone</label>
+              </div>
+            </div>
+          </div>
+          <div class="row m-0">
+            <div class="col-12 p-2">
+              <div class="form-floating">
+                <textarea
+                  class="form-control shadow-none"
+                  placeholder="Leave a comment here"
+                  id="message"
+                  style="height: 140px"
+                ></textarea>
+                <label class="align-items-start" for="message">Message</label>
+              </div>
+            </div>
+          </div>
+          <div class="row m-0">
+            <div class="col-12 px-2">
+              <p class="m-0">indicates a require field</p>
+            </div>
+          </div>
+          <div class="row m-0 mt-2">
+            <div class="col-7 col-md-5 mx-auto px-2">
+              <button class="h-100 w-100 py-2 py-md-3 px-4 fw-semibold text-white fs-5" type="submit">Submit</button>
+            </div>
+          </div>
+        </form>
+      </div>
+    </section>
+
+    <footer class="pt-2 pb-0">
+      <div class="footer-container row m-0 mx-auto">
+        <div class="footer-content-outer col-12 col-md-6 p-2 p-md-4">
+          <div class="row m-0">
+            <span class="col-3 col-sm-2 col-md-3 text-uppercase fw-semibold">ADDRESS:</span>
+            <span class="col-9 col-sm-10 col-md-9">6391 Elgin St. Celina, Delaware 10299</span>
+          </div>
+          <div class="row m-0 mt-1 mt-md-3">
+            <span class="col-3 col-sm-2 col-md-3 text-uppercase fw-semibold">PHONE:</span>
+            <span class="col-9 col-sm-10 col-md-9">+84 1102 2703</span>
+          </div>
+          <div class="row m-0 mt-1 mt-md-3">
+            <span class="col-3 col-sm-2 col-md-3 text-uppercase fw-semibold">EMAIL:</span>
+            <span class="col-9 col-sm-10 col-md-9">hello@thebox.com</span>
+          </div>
+          <div class="row m-0 mt-1 mt-md-3">
+            <a class="navbar-brand fw-bold d-flex flex-row align-items-center gap-3" href="#">
+              <img src="./images/content/navbar/logo.svg" alt="logo" width="25" />
+              <span class="logo-text"><i>The</i>Box</span>
+            </a>
+          </div>
+        </div>
+        <div class="footer-form-outer col-12 col-md-6 p-2 p-md-4">
+          <div class="row m-0">
+            <span class="col-3 col-sm-2 col-md-3 text-uppercase fw-semibold">NEWSLETTER:</span>
+            <div class="input-container row m-0">
+              <input type="text" placeholder="Your email here" class="col-8" />
+              <div class="px-1 col-4">
+                <button class="h-100 w-100 text-white border-radius-3px">Subscribe</button>
+              </div>
+            </div>
+          </div>
+          <div class="row m-0 mt-1 mt-md-3">
+            <span class="col-3 col-sm-2 col-md-3 text-uppercase fw-semibold">SOCIAL:</span>
+            <div class="social-icon-container m-0 p-0 ps-2 d-flex flex-row align-items-center gap-1 gap-md-3 mt-1">
+              <a class="h-100" href="#">
+                <img class="h-100 rounded" src="./images/content/footer/facebook.svg" alt="facebook icon" />
+              </a>
+              <a class="h-100" href="#">
+                <img class="h-100 rounded" src="./images/content/footer/linkedin.svg" alt="linkedin icon" />
+              </a>
+              <a class="h-100" href="#">
+                <img class="h-100 rounded" src="./images/content/footer/twitter.svg" alt="twitter icon" />
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="copyright p-3 px-2 px-md-4">
+        <p class="mb-0 mx-auto text-white px-2 px-md-4">TheBox Company © 2022. All Rights Reserved</p>
+      </div>
     </footer>
   </body>
 </html>
